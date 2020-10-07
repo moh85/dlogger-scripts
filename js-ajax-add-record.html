@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>dLogger Ajax Add Record</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h4>dLogger Test (uplody.com/logger)</h4><br>
+<label>Name</label>
+<input placeholder="Name" value="Mohammad" id="name">
+<br><br>
+<label>Age</label>
+<input placeholder="Age" value="23" id="age">
+<br><br>
+<button onclick="addRecord()">Save Record</button>
+
+<br>
+<br>
+<label>Results:</label>
+<br>
+<p style="word-break:break-word;" id="results"></p>
+
+
+<script>
+function addRecord(){
+var end_point = 'https://uplody.com/logger/?log=5f7dc8499d1025f7dc8499d1045f7dc8499d10516020787939155390';
+$.post(end_point, {'name': $('#name').val(), 'age': $('#age').val()}, function(res){
+$('#results').html('<span style="background:#eee;display: block;padding: 5px;border-radius: 10px;">'+JSON.stringify(res) + '</span><br>' + '<a target="_blank" href="'+end_point + '&db=true' + '">Database Link</a>');
+});
+}
+</script>
+</body>
+</html>
