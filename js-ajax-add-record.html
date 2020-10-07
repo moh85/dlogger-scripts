@@ -24,7 +24,7 @@
 
 <script>
 function addRecord(){
-var end_point = 'https://uplody.com/logger/?log=5f7dc8499d1025f7dc8499d1045f7dc8499d10516020787939155390';
+var end_point = 'https://uplody.com/logger/?log_id=5f7dc8499d1025f7dc8499d1045f7dc8499d10516020787939155390';
 $.post(end_point, {'name': $('#name').val(), 'age': $('#age').val()}, function(res){
 $('#results').html('<span style="background:#eee;display: block;padding: 5px;border-radius: 10px;">'+JSON.stringify(res) + '</span><br>' + '<a target="_blank" href="'+end_point + '&db=true' + '">Database Link</a>');
 });
